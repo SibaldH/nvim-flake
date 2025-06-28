@@ -13,31 +13,18 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+
+    # Import all .nix files form th emodules directory
+    modules = map (file: import (./. + "modules/${file}"))
+        (builtins.attrNames (builtins.readDir ./modules));
   in {
     packages.${system}.default = (nvf.lib.neovimConfiguration {
       inherit pkgs;
-      modules = [
-        {
-          config.vim = {
-            theme = {
-              enable = true;
-              name = "tokyonight";
-              style = "night";
-            };
-            statusline.lualine.enable = true;
-            telescope.enable = true;
-            autocomplete.nvim-cmp.enable = true;
-
-            lsp.enable = true;
-            languages = {
-              enableTreesitter = true;
-
-              nix.enable = true;
-              rust.enable = true;
-            };
-          };
-        }
-      ];
+      modules = modules;
     }).neovim;
+
+    homeManagerModules.default = { pkgs, ... }: {
+      home.packages = [ self.packages.${system}.default ];
+    };
   };
 }
