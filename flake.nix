@@ -14,13 +14,17 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
-    # Import all .nix files form th emodules directory
-    modules = map (file: import (./. + "modules/${file}"))
-        (builtins.attrNames (builtins.readDir ./modules));
+    selectedModules = [
+                (import ./modules/theme.nix)
+                (import ./modules/plugins.nix)
+                (import ./modules/languages.nix)
+                (import ./modules/remap.nix)
+                (import ./modules/set.nix)
+    ];
   in {
     packages.${system}.default = (nvf.lib.neovimConfiguration {
       inherit pkgs;
-      modules = modules;
+      modules = selectedModules;
     }).neovim;
 
     homeManagerModules.default = { pkgs, ... }: {
