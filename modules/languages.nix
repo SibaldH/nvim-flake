@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
         config.vim.lsp.enable = true;
         config.vim.languages = {
                 enableTreesitter = true;

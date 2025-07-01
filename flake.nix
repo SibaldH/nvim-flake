@@ -16,7 +16,7 @@
 
     selectedModules = [
                 (import ./modules/theme.nix)
-                (import ./modules/plugins.nix)
+                (import ./plugins/telescope.nix)
                 (import ./modules/languages.nix)
                 (import ./modules/remap.nix)
                 (import ./modules/set.nix)
