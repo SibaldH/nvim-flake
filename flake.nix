@@ -15,11 +15,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     selectedModules = [
-                (import ./modules/theme.nix)
-                (import ./plugins/telescope.nix)
-                (import ./modules/languages.nix)
-                (import ./modules/remap.nix)
-                (import ./modules/set.nix)
+                (import ./modules)
     ];
   in {
     packages.${system}.default = (nvf.lib.neovimConfiguration {
