@@ -3,8 +3,6 @@ let
         inherit (lib.nvim.binds) mkKeymap;
 in {
   config.vim.luaConfigRC.remap = ''
-    vim.keymap.set("n", "<leader>pv", ":Ex<Cr>", { noremap = true, silent = true, desc = "open netrw" } )
-
     vim.keymap.set("i", "jj", vim.cmd.stopinsert, { noremap = true, silent = true, desc = "leaves insert mode" }) -- leaves insert mode
     vim.keymap.set("n", "<leader>w", ":w<Cr>", { noremap = true, silent = false, desc = "write file" }) -- write file
     vim.keymap.set("n", "<leader>q", ":q<Cr>", { noremap = true, silent = true, desc = "quit nvim" }) -- quit nvim
