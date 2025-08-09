@@ -7,5 +7,6 @@
     ./harpoon.nix
     ./web-devicons.nix
     ./conform.nix
+    ./git.nix
   ];
 }
