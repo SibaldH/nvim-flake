@@ -5,5 +5,6 @@
     ./statusline.nix
     ./oil.nix
     ./harpoon.nix
+    ./web-devicons.nix
   ];
 }
