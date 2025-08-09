@@ -6,5 +6,6 @@
     ./oil.nix
     ./harpoon.nix
     ./web-devicons.nix
+    ./conform.nix
   ];
 }
