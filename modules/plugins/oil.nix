@@ -33,8 +33,10 @@
     };
   };
 
-  vim.luaConfigRC.oil-remap = ''
-    vim.keymap.set("n", "<leader>pv", ":Oil --float --preview<CR>", { desc = "Open oil in a floating window" , silent = true })
-  '';
-
+  vim.maps.normal = {
+    "<leader>pv" = {
+      action = "<cmd>Oil --float --preview<cr>";
+      desc = "Open oil in a floating window";
+    };
+  };
 }
