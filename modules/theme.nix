@@ -1,7 +1,8 @@
-{ config, ... }: {
-        config.vim.theme = {
-                enable = true;
-                name = "tokyonight";
-                style = "night";
-        };
+{
+  config.vim.theme = {
+    enable = true;
+    name = "tokyonight";
+    style = "night";
+    transparent = true;
+  };
 }
