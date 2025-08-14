@@ -5,6 +5,7 @@
     ./oil.nix
     ./harpoon.nix
     ./conform.nix
+    ./dap.nix
     ./mini.nix
   ];
 }
