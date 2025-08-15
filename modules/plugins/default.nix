@@ -5,9 +5,10 @@
     ./oil.nix
     ./fidget.nix
     ./harpoon.nix
+    ./icon-picker.nix
     ./conform.nix
     ./dap.nix
     ./mini.nix
-    ./undotree.nix
+    # ./undotree.nix # wait for nvf update
   ];
 }
