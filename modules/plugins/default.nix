@@ -2,14 +2,15 @@
   imports = [
     ./autocomplete.nix
     ./colorizer.nix
-    ./telescope.nix
-    ./oil.nix
+    ./conform.nix
+    ./dap.nix
     ./fidget.nix
     ./harpoon.nix
     ./icon-picker.nix
-    ./conform.nix
-    ./dap.nix
     ./mini.nix
+    ./nvim-notify.nix
+    ./oil.nix
+    ./telescope.nix
     # ./undotree.nix # wait for nvf update
   ];
 }
