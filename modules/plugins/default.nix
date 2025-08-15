@@ -11,6 +11,6 @@
     ./nvim-notify.nix
     ./oil.nix
     ./telescope.nix
-    # ./undotree.nix # wait for nvf update
+    ./undotree.nix # wait for nvf update
   ];
 }
