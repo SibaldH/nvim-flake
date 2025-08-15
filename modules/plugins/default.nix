@@ -8,5 +8,6 @@
     ./conform.nix
     ./dap.nix
     ./mini.nix
+    ./undotree.nix
   ];
 }
