@@ -1,6 +1,7 @@
 {
   imports = [
     ./autocomplete.nix
+    ./colorizer.nix
     ./telescope.nix
     ./oil.nix
     ./fidget.nix
