@@ -108,7 +108,7 @@
         desc = "leaves insert mode";
         lua = true;
       };
-      "<esc>".action = "<nop>";
+      # "<esc>".action = "<nop>";
     };
 
     visual = {
