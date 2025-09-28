@@ -10,6 +10,6 @@ Run: `nix run .` to launch Neovim with the config in flake.nix
 ## TODO
 - [ ] fix '>>' and '<<' to reselect
 - [ ] add marks.nvim
-- [ ] redo escape keys
-- [ ] translate vim.maps to vim.keymaps
+- [x] redo escape keys
+- [x] translate vim.maps to vim.keymaps
 - [ ] config mini line

@@ -1,135 +1,221 @@
 {
-  config.vim.maps = {
-    normal = {
-      "<leader>w" = {
-        action = "<cmd>w<cr>";
-        desc = "write file";
-      };
-      "<leader>q" = {
-        action = "<cmd>q<cr>";
-        desc = "quit nvim";
-      };
+  config.vim.keymaps = [
+    # Normal mode mappings
+    {
+      key = "<leader>w";
+      mode = "n";
+      action = "<cmd>w<cr>";
+      desc = "write file";
+    }
+    {
+      key = "<leader>q";
+      mode = "n";
+      action = "<cmd>q<cr>";
+      desc = "quit nvim";
+    }
+    {
+      key = "J";
+      mode = "n";
+      action = "mzJ`z";
+    }
+    {
+      key = "<C-d>";
+      mode = "n";
+      action = "<C-d>zz";
+    }
+    {
+      key = "<C-u>";
+      mode = "n";
+      action = "<C-u>zz";
+    }
+    {
+      key = "n";
+      mode = "n";
+      action = "nzzzv";
+    }
+    {
+      key = "N";
+      mode = "n";
+      action = "Nzzzv";
+    }
+    {
+      key = "{";
+      mode = ["n" "x"];
+      action = "{zz";
+    }
+    {
+      key = "}";
+      mode = ["n" "x"];
+      action = "}zz";
+    }
+    {
+      key = "Q";
+      mode = "n";
+      action = "<nop>";
+    }
+    {
+      key = "<leader>no";
+      mode = "n";
+      action = "vim.cmd.noh";
+      desc = "No highlight";
+      lua = true;
+    }
+    {
+      key = "<leader>Y";
+      mode = "n";
+      action = "\"+Y";
+      desc = "Yank line into + register";
+    }
+    {
+      key = "<leader>y";
+      mode = ["n" "x"];
+      action = "\"+y";
+      desc = "Yank into + register";
+    }
+    {
+      key = "<leader>d";
+      mode = ["n" "x"];
+      action = "\"_d";
+      desc = "delete to void register";
+    }
+    {
+      key = "[d";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_next()<cr>zz";
+      desc = "Goto next diagnostic";
+    }
+    {
+      key = "]d";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_prev()<cr>zz";
+      desc = "Goto previos diagnostic";
+    }
+    {
+      key = "[e";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>zz";
+      desc = "Goto next diagnostic";
+    }
+    {
+      key = "]e";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>zz";
+      desc = "Goto previos diagnostic";
+    }
+    {
+      key = "[w";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })<cr>zz";
+      desc = "Goto next diagnostic";
+    }
+    {
+      key = "]w";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<cr>zz";
+      desc = "Goto previos diagnostic";
+    }
+    {
+      key = "<localleader>d";
+      mode = "n";
+      action = "<cmd>lua vim.diagnostic.open_float({ border = \"rounded\", })<cr>";
+      desc = "Open the diagnostic under the cursor in a float window";
+    }
+    {
+      key = "<leader>ld";
+      mode = "n";
+      action = "vim.diagnostic.setqflist";
+      desc = "Quickfix [L]ist [D]iagnostics";
+      lua = true;
+    }
+    {
+      key = "<leader>cn";
+      mode = "n";
+      action = "<cmd>cnext<cr>zz";
+      desc = "Navigate to next qflist item";
+    }
+    {
+      key = "<leader>cp";
+      mode = "n";
+      action = "<cmd>cprevious<cr>zz";
+      desc = "Navigate to prev qflist item";
+    }
+    {
+      key = "<leader>co";
+      mode = "n";
+      action = "<cmd>copen<cr>zz";
+      desc = "Open qflist";
+    }
+    {
+      key = "<leader>cc";
+      mode = "n";
+      action = "<cmd>cclose<cr>zz";
+      desc = "Close qflist";
+    }
+    {
+      key = "U";
+      mode = "n";
+      action = "<C-r>";
+      desc = "Redo";
+    }
+    {
+      key = "L";
+      mode = "n";
+      action = "$";
+      desc = "Jump to end of line";
+    }
+    {
+      key = "H";
+      mode = "n";
+      action = "^";
+      desc = "Jump to start of line";
+    }
+    {
+      key = "S";
+      mode = "n";
+      action = "<cmd>%s/\\<C-r><C-w>/\\<C-r><C-w>/gI<Left><Left><Left>";
+      desc = "Quick find/replace for the word under the cursor";
+    }
 
-      "J".action = "mzJ`z";
-      "<C-d>".action = "<C-d>zz";
-      "<C-u>".action = "<C-u>zz";
-      "n".action = "nzzzv";
-      "N".action = "Nzzzv";
-      "{".action = "{zz";
-      "}".action = "}zz";
-      "Q".action = "<nop>";
-      "<leader>no" = {
-        action = "vim.cmd.noh";
-        desc = "No highlight";
-        lua = true;
-      };
-      "<leader>Y" = {
-        action = "\"+Y";
-        desc = "Yank line into + register";
-      };
-      "<leader>y" = {
-        action = "\"+y";
-        desc = "Yank into + register";
-      };
-      "<leader>d" = {
-        action = "\"_d";
-        desc = "delete to void register";
-      };
-      "[d" = {
-        action = "<cmd>lua vim.diagnostic.goto_next()<cr>zz";
-        desc = "Goto next diagnostic";
-      };
-      "]d" = {
-        action = "<cmd>lua vim.diagnostic.goto_prev()<cr>zz";
-        desc = "Goto previos diagnostic";
-      };
-      "[e" = {
-        action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>zz";
-        desc = "Goto next diagnostic";
-      };
-      "]e" = {
-        action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>zz";
-        desc = "Goto previos diagnostic";
-      };
-      "[w" = {
-        action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })<cr>zz";
-        desc = "Goto next diagnostic";
-      };
-      "]w" = {
-        action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<cr>zz";
-        desc = "Goto previos diagnostic";
-      };
-      "<localleader>d" = {
-        action = "<cmd>lua vim.diagnostic.open_float({ border = \"rounded\", })<cr>";
-        desc = "Open the diagnostic under the cursor in a float window";
-      };
-      "<leader>ld" = {
-        action = "vim.diagnostic.setqflist";
-        desc = "Quickfix [L]ist [D]iagnostics";
-        lua = true;
-      };
-      "<leader>cn" = {
-        action = "<cmd>cnext<cr>zz";
-        desc = "Navigate to next qflist item";
-      };
-      "<leader>cp" = {
-        action = "<cmd>cprevious<cr>zz";
-        desc = "Navigate to prev qflist item";
-      };
-      "<leader>co" = {
-        action = "<cmd>copen<cr>zz";
-        desc = "Open qflist";
-      };
-      "<leader>cc" = {
-        action = "<cmd>cclose<cr>zz";
-        desc = "Close qflist";
-      };
-      "U" = {
-        action = "<C-r>";
-        desc = "Redo";
-      };
-      "L" = {
-        action = "$";
-        desc = "Jump to end of line";
-      };
-      "H" = {
-        action = "^";
-        desc = "Jump to start of line";
-      };
-      "S" = {
-        action = "<cmd>%s/\\<C-r><C-w>/\\<C-r><C-w>/gI<Left><Left><Left>";
-        desc = "Quick find/replace for the word under the cursor";
-      };
-    };
+    # Insert mode mappings
+    {
+      key = "<C-^>";
+      mode = "i";
+      action = "vim.cmd.stopinsert";
+      desc = "leaves insert mode";
+      lua = true;
+    }
+    {
+      key = "<esc>";
+      mode = "i";
+      action = "<nop>";
+    }
 
-    insert = {
-      "<C-^>" = {
-        action = "vim.cmd.stopinsert";
-        desc = "leaves insert mode";
-        lua = true;
-      };
-      # "<esc>".action = "<nop>";
-    };
-
-    visual = {
-      "<M-j>".action = "<cmd>m '>+1<cr>gv=gv";
-      "<M-K>".action = "<cmd>m '<-2<cr>gv=gv";
-      "{".action = "{zz";
-      "}".action = "}zz";
-      "<leader>P" = {
-        action = "\"_dP"; # escape string limits with backslach
-        desc = "Paste without overwriting register 0";
-      };
-      "<leader>y" = {
-        action = "\"+y";
-        desc = "Yank into + register";
-      };
-      "<leader>d" = {
-        action = "\"_d";
-        desc = "delete to void register";
-      };
-      "<<".action = "<<gv";
-      ">>".action = ">>gv";
-    };
-  };
+    # Visual mode mappings
+    {
+      key = "<M-j>";
+      mode = "x";
+      action = "<cmd>m '>+1<cr>gv=gv";
+    }
+    {
+      key = "<M-K>";
+      mode = "x";
+      action = "<cmd>m '<-2<cr>gv=gv";
+    }
+    {
+      key = "<leader>P";
+      mode = "x";
+      action = "\"_dP";
+      desc = "Paste without overwriting register 0";
+    }
+    {
+      key = "<<";
+      mode = "x";
+      action = "<<gv";
+    }
+    {
+      key = ">>";
+      mode = "x";
+      action = ">>gv";
+    }
+  ];
 }
