@@ -217,5 +217,27 @@
       mode = "x";
       action = ">>gv";
     }
+    {
+      key = ">>";
+      mode = "x";
+      action = ''
+        function()
+          vim.cmd("normal! >>")
+          vim.cmd("normal! gv")
+        end
+      '';
+      lua = true;
+    }
+    {
+      key = "<<";
+      mode = "x";
+      action = ''
+        function()
+          vim.cmd("normal! <<")
+          vim.cmd("normal! gv")
+        end
+      '';
+      lua = true;
+    }
   ];
 }
