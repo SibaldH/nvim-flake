@@ -186,7 +186,7 @@
     }
     {
       key = "<esc>";
-      mode = "i";
+      mode = [ "x" "i" ];
       action = "<nop>";
     }
 
