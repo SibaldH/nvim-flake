@@ -9,6 +9,7 @@
     nix.enable = true;
     lua.enable = true;
     typst.enable = true;
+    qml.enable = true;
     rust = {
       enable = true;
       # lsp.opts = lib.luaInline ''
