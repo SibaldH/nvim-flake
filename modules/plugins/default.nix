@@ -1,7 +1,7 @@
 {
   imports = [
+    ./assistant.nix
     ./autocomplete.nix
-    ./codecompanion.nix
     ./colorizer.nix
     ./conform.nix
     ./dap.nix
