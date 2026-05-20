@@ -12,15 +12,15 @@
     qml.enable = true;
     rust = {
       enable = true;
-      lsp.opts = lib.luaInline ''
-        ['rust-analyzer'] = {
-            cargo = {allFeature = true},
-            checkOnSave = true,
-            procMacro = {
-              enable = true,
-            },
-          },
-      '';
+      # lsp.opts = lib.luaInline ''
+      #   ['rust-analyzer'] = {
+      #       cargo = {allFeature = true},
+      #       checkOnSave = true,
+      #       procMacro = {
+      #         enable = true,
+      #       },
+      #     },
+      # '';
     };
 
     astro.enable = true;
